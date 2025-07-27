@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM de Formation Chef de Salle Ferme Saint Lambert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Inter:wght@300;400;500;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- Styles CSS (commence ici) --- */
+        :root {
+            --light-bg: #f8faff; /* Fond très légèrement bleu/blanc cassé */
+            --white-card: #ffffff;
+            --dark-text: #2c3e50; /* Gris très foncé pour le texte */
+            --light-text-secondary: #5a6b7d; /* Gris moyen pour le texte secondaire */
+            --primary-dark: #0a0a0a; /* Noir profond pour les accents et boutons */
+            --primary-dark-hover: #333333; /* Gris foncé pour le survol */
+            --success-green: #28a745;
+            --success-green-light: #d4edda; /* Fond léger pour succès */
+            --error-red: #dc3545;
+            --error-red-light: #f8d7da; /* Fond léger pour erreur */
+            --border-light: #e0e6ed; /* Bordures très claires */
+            --shadow-light: rgba(0, 0, 0, 0.08); /* Ombre douce */
+            --border-radius-lg: 12px;
+            --border-radius-md: 8px;
+            --border-radius-sm: 5px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif; /* Police principale Arial */
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            padding-top: 60px; /* Espace pour la barre de progression fixe + texte, ajusté */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            background-color: var(--white-card);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 10px 30px var(--shadow-light);
+            width: 100%;
+            max-width: 900px;
+            box-sizing: border-box;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bricolage Grotesque', sans-serif; /* Police pour les titres */
+            color: var(--dark-text);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.3em; text-align: left; margin-bottom: 20px;}
+
+        /* Logo styles */
+        .logo {
+            display: block;
+            margin: 0 auto 30px auto; /* Centrer le logo et ajouter de l'espace en dessous */
+            max-width: 250px; /* Taille maximale du logo augmentée */
+            height: auto;
+        }
+
+        /* Introduction text */
+        .introduction-text {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: var(--light-text-secondary);
+            line-height: 1.8;
+        }
+        .introduction-text strong {
+            color: var(--primary-dark);
+        }
+
+        /* Progression Bar (Fixed) */
+        .progress-container {
+            width: 100%;
+            height: 10px; /* Barre plus épaisse */
+            background-color: #e9ecef;
+            border-radius: 0;
+            position: fixed; /* Rendre la barre fixe */
+            top: 0; /* Collé tout en haut */
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: var(--primary-dark); /* Couleur noire pour la barre */
+            border-radius: 0;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .progress-text {
+            position: fixed; /* Fixer le texte aussi */
+            top: 20px; /* Positionné juste en dessous de la barre (10px barre + 10px espace) */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.1em; /* Texte plus grand */
+            font-weight: 600; /* Texte plus gras */
+            color: var(--dark-text); /* Couleur de texte plus foncée */
+            z-index: 1001; /* Au-dessus de la barre */
+            background-color: #ffffff; /* Fond blanc opaque pour un meilleur contraste */
+            padding: 5px 15px; /* Plus de padding */
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Ombre plus prononcée pour le faire ressortir */
+        }
+
+
+        /* Styles pour le formulaire d'inscription */
+        #registrationForm {
+            padding-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--light-text-secondary);
+            font-size: 0.95em;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"] {
+            width: calc(100% - 24px);
+            padding: 14px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius-md);
+            background-color: #fcfdfe;
+            color: var(--dark-text);
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus {
+            outline: none;
+            border-color: var(--primary-dark);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2); /* Ombre noire */
+        }
+
+        /* Message d'erreur pour les champs du formulaire */
+        .form-group .error-message {
+            color: var(--error-red);
+            font-size: 0.85em;
+            margin-top: 5px;
+            display: none; /* Caché par défaut */
+        }
+        .form-group.has-error input {
+            border-color: var(--error-red);
+        }
+        .form-group.has-error .error-message {
+            display: block;
+        }
+
+
+        /* Styles du QCM */
+        .question-block {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border-light);
+            transition: border-color 0.3s ease; /* Transition pour la bordure d'erreur */
+        }
+
+        .question-block:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Style pour les questions non répondues */
+        .question-block.not-answered {
+            border: 2px solid var(--error-red);
+            border-radius: var(--border-radius-md);
+            padding: 25px; /* Pour compenser la bordure */
+            margin-bottom: 30px;
+        }
+
+
+        .options label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            cursor: pointer;
+            padding: 15px 20px;
+            background-color: #f9fbff;
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius-md);
+            transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .options label:hover {
+            background-color: #eef2f8;
+            border-color: var(--primary-dark); /* Bordure noire au survol */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.1);
+            accent-color: var(--primary-dark); /* Couleur noire pour les radios */
+            min-width: 18px;
+            min-height: 18px;
+        }
+
+        .options input[type="radio"]:checked + span {
+            font-weight: 600;
+            color: var(--primary-dark); /* Texte en noir si sélectionné */
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 16px 25px;
+            background-color: var(--primary-dark); /* Bouton noir */
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-size: 1.15em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            margin-top: 40px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre noire */
+        }
+
+        button:hover:not(:disabled) {
+            background-color: var(--primary-dark-hover); /* Survol plus clair */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée */
+        }
+
+        button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        #result {
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: var(--border-radius-md);
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+            border: 1px solid;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .pass {
+            background-color: var(--success-green-light);
+            color: var(--success-green);
+            border-color: var(--success-green);
+        }
+
+        .fail {
+            background-color: var(--error-red-light);
+            color: var(--error-red);
+            border-color: var(--error-red);
+        }
+
+        #result p {
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-weight: normal;
+            color: var(--dark-text);
+        }
+
+        .feedback-container {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .feedback-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            line-height: 1.5;
+        }
+
+        .feedback-item.correct {
+            background-color: #e6ffe6;
+            border: 1px solid #c8e6c9;
+        }
+
+        .feedback-item.incorrect {
+            background-color: #ffe6e6;
+            border: 1px solid #e6c8c9;
+        }
+
+        .feedback-item .icon {
+            font-size: 2em;
+            margin-right: 20px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .feedback-item.correct .icon {
+            color: var(--success-green);
+        }
+
+        .feedback-item.incorrect .icon {
+            color: var(--error-red);
+        }
+
+        .feedback-item .text {
+            flex-grow: 1;
+        }
+
+        .feedback-item .text strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            color: var(--dark-text);
+        }
+
+        .feedback-item .text .chosen-answer, .feedback-item .text .correct-answer {
+            font-size: 0.95em;
+            color: var(--light-text-secondary);
+            margin-top: 5px;
+        }
+
+        .feedback-item .text .correct-answer {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        /* Emoji animation for success */
+        .emoji-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .emoji-rain span {
+            position: absolute;
+            font-size: 2.5em;
+            opacity: 0;
+            animation: floatUp 4s linear infinite;
+            transform: translateX(-50%);
+            text-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px; /* Ajuster pour mobile */
+            }
+            .container {
+                padding: 25px;
+                margin: 15px;
+            }
+
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.7em; }
+            h3 { font-size: 1.1em; }
+
+            .logo {
+                max-width: 180px; /* Ajuster la taille du logo sur mobile */
+            }
+            .introduction-text {
+                font-size: 1em;
+            }
+            .progress-container {
+                height: 8px;
+            }
+            .progress-text {
+                top: 18px; /* Ajuster la position du texte */
+                font-size: 0.9em;
+                padding: 3px 10px;
+                box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Ombre ajustée */
+            }
+
+
+            .form-group label {
+                font-size: 0.9em;
+            }
+
+            .form-group input {
+                padding: 12px;
+            }
+
+            .options label {
+                padding: 12px 15px;
+                font-size: 0.95em;
+            }
+
+            .options input[type="radio"] {
+                margin-right: 10px;
+            }
+
+            button {
+                padding: 14px 20px;
+                font-size: 1.05em;
+            }
+
+            #result {
+                padding: 20px;
+                font-size: 1.1em;
+            }
+
+            .feedback-item {
+                padding: 15px;
+            }
+
+            .feedback-item .icon {
+                font-size: 1.8em;
+                margin-right: 15px;
+            }
+
+            .feedback-item .text strong {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+                padding-top: 50px; /* Ajuster pour petits mobiles */
+            }
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 { font-size: 1.7em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1em; }
+
+            .form-group input {
+                font-size: 0.85em;
+            }
+            .logo {
+                max-width: 150px; /* Ajuster encore le logo */
+            }
+            .introduction-text {
+                font-size: 0.9em;
+            }
+            .progress-container {
+                height: 6px;
+            }
+            .progress-text {
+                top: 15px; /* Ajuster la position du texte */
+                font-size: 0.8em;
+                padding: 2px 8px;
+            }
+        }
+        /* --- Styles CSS (finit ici) --- */
+    </style>
+</head>
+<body>
+    <div class="progress-text" id="progressText">Question 0 sur 0</div>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+
+    <div class="container">
+        <div id="registrationForm">
+            <img src="https://drive.google.com/thumbnail?id=1e01uu9TrEF3z2r0hyei57NLeldVliFnY&sz=s800" alt="Logo La Boutique Concept" class="logo">
+            <h2>QCM de Formation Chef de Salle Ferme Saint Lambert</h2>
+            <p class="introduction-text">
+                <strong>40 questions à choix multiples</strong>, pour chacune d'entre elles, une seule réponse est correcte. Il vous suffit de cocher la lettre correspondant à votre choix. Pour valider cette épreuve, vous devrez atteindre un score minimum de <strong>32 bonnes réponses sur 40, soit 80 % de réussite</strong>.<br><br>
+                Pas de panique si vous n'atteignez pas le seuil requis dès la première tentative : vous aurez la possibilité de repasser le test ultérieurement.
+            </p>
+            <form id="userInfoForm">
+                <div class="form-group">
+                    <label for="firstName">Prénom :</label>
+                    <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+                    <div class="error-message" id="firstNameError">Veuillez entrer votre prénom.</div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Nom :</label>
+                    <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+                    <div class="error-message" id="lastNameError">Veuillez entrer votre nom.</div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse e-mail :</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                    <div class="error-message" id="emailError">Veuillez entrer une adresse e-mail valide.</div>
+                </div>
+                <button type="submit" id="startQuizButton">Commencer le QCM</button>
+            </form>
+        </div>
+
+        <div id="quizContent">
+            <h1>QCM de Formation Chef de Salle Ferme Saint Lambert</h1>
+            <form id="quizForm">
+                </form>
+            <button type="submit" id="submitQuiz">Valider le QCM</button>
+            <div id="result"></div>
+            <div id="feedbackContainer" class="feedback-container"></div>
+            <button id="retryQuizButton" style="display: none;">Réessayer le QCM</button>
+        </div>
+    </div>
+
+    <div class="emoji-rain" id="emojiRainContainer"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function() {
+          // INITIALISATION EMAILJS AVEC VOTRE CLÉ PUBLIQUE
+          emailjs.init("5Q6sLkxpuZG1BHTQJ"); // Votre clé publique EmailJS
+       })();
+    </script>
+    <script>
+        // --- JavaScript (commence ici) ---
+        // Données du QCM (MODIFIÉES POUR FERME SAINT LAMBERT)
+        const questions = [
+            {
+                question: "À votre arrivée sur les lieux, que devez-vous faire en premier ?",
+                options: [
+                    "Décharger immédiatement le camion",
+                    "Vérifier s'il y a quelqu'un dans la salle et vous présenter",
+                    "Installer la machine à café",
+                    "Contrôler le plan de table"
+                ],
+                answer: "Vérifier s'il y a quelqu'un dans la salle et vous présenter"
+            },
+            {
+                question: "Que devez-vous vérifier concernant les réfrigérateurs ?",
+                options: [
+                    "Qu'ils soient vides",
+                    "Qu'ils soient éteints pour économiser l'énergie",
+                    "Qu'ils soient allumés et à la bonne température",
+                    "Uniquement leur propreté"
+                ],
+                answer: "Qu'ils soient allumés et à la bonne température"
+            },
+            {
+                question: "Où doit être placé le Grillo blanc ?",
+                options: [
+                    "Au réfrigérateur du bar de la salle basse",
+                    "Au réfrigérateur du bar de la salle haute",
+                    "À température ambiante dans la cuisine",
+                    "Dans la zone de débarrassage"
+                ],
+                answer: "Au réfrigérateur du bar de la salle haute"
+            },
+            {
+                question: "Où doit être placé le Spumante ?",
+                options: [
+                    "Au réfrigérateur du bar de la salle haute",
+                    "Au réfrigérateur du bar de la salle basse",
+                    "À température ambiante",
+                    "Dans la cuisine"
+                ],
+                answer: "Au réfrigérateur du bar de la salle basse"
+            },
+            {
+                question: "Concernant l'ouverture des vins, quelle est la règle pour le Grillo blanc ?",
+                options: [
+                    "Retirer complètement le bouchon",
+                    "Laisser le bouchon sur la bouteille",
+                    "Ouvrir seulement au moment du service",
+                    "Ne pas l'ouvrir du tout"
+                ],
+                answer: "Laisser le bouchon sur la bouteille"
+            },
+            {
+                question: "Pour le Nero d'Avola, que faut-il faire avec le bouchon ?",
+                options: [
+                    "Le laisser sur la bouteille",
+                    "Le retirer complètement pour faire respirer le vin",
+                    "L'ouvrir seulement à moitié",
+                    "Attendre la demande des clients"
+                ],
+                answer: "Le retirer complètement pour faire respirer le vin"
+            },
+            {
+                question: "Quand faut-il ouvrir les vins ?",
+                options: [
+                    "1 heure avant le service",
+                    "30 minutes avant l'arrivée des invités",
+                    "Au moment du service",
+                    "15 minutes avant l'arrivée"
+                ],
+                answer: "30 minutes avant l'arrivée des invités"
+            },
+            {
+                question: "Pour la machine à café, quelle couleur de capsule utilise-t-on pour les grands cafés ?",
+                options: [
+                    "Rouge",
+                    "Verte",
+                    "Bleue",
+                    "Noire"
+                ],
+                answer: "Bleue"
+            },
+            {
+                question: "Comment préparez-vous le café de Mouss ?",
+                options: [
+                    "Avec 2 sucres et du lait",
+                    "Noir sans rien",
+                    "Avec 1 sucre",
+                    "Avec du lait seulement"
+                ],
+                answer: "Noir sans rien"
+            },
+            {
+                question: "Comment préparez-vous le café d'Iptisem ?",
+                options: [
+                    "Noir sans rien",
+                    "Avec du lait seulement",
+                    "Avec exactement 2 sucres",
+                    "Avec 3 sucres"
+                ],
+                answer: "Avec exactement 2 sucres"
+            },
+            {
+                question: "Quel type de table faut-il installer dans la zone de débarrassage ?",
+                options: [
+                    "Une table ronde classique",
+                    "Une table La Boutique Concept",
+                    "Une table pliante",
+                    "Une table haute"
+                ],
+                answer: "Une table La Boutique Concept"
+            },
+            {
+                question: "À quoi sert le papier collant dans la zone de débarrassage ?",
+                options: [
+                    "À fixer la table",
+                    "À fixer la poubelle",
+                    "À marquer les zones",
+                    "À emballer le matériel"
+                ],
+                answer: "À fixer la poubelle"
+            },
+            {
+                question: "Combien de personnes assignez-vous pour aider Mouss avec la charcuterie ?",
+                options: [
+                    "1 personne",
+                    "2 personnes",
+                    "3 personnes",
+                    "Toute l'équipe disponible"
+                ],
+                answer: "2 personnes"
+            },
+            {
+                question: "Combien de personnes positionnez-vous à l'entrée pour l'accueil des invités ?",
+                options: [
+                    "1 personne",
+                    "2-3 personnes en fonction du personnel disponible",
+                    "5 personnes",
+                    "Toute l'équipe"
+                ],
+                answer: "2-3 personnes en fonction du personnel disponible"
+            },
+            {
+                question: "Que doivent porter les serveurs à l'entrée pour accueillir les invités ?",
+                options: [
+                    "Des plateaux vides",
+                    "Des plateaux de Spumante",
+                    "Seulement des sourires",
+                    "Des menus"
+                ],
+                answer: "Des plateaux de Spumante"
+            },
+            {
+                question: "Que ne faut-il jamais faire avec les flûtes à Spumante pendant le vin d'honneur ?",
+                options: [
+                    "Les remplir",
+                    "Les nettoyer",
+                    "Les débarrasser sauf si le client les donne directement",
+                    "Les compter"
+                ],
+                answer: "Les débarrasser sauf si le client les donne directement"
+            },
+            {
+                question: "Que faut-il assurer aux mariés pendant le vin d'honneur ?",
+                options: [
+                    "Qu'ils aient une coupe de Spumante tout le long",
+                    "Qu'ils restent assis",
+                    "Qu'ils mangent d'abord",
+                    "Qu'ils parlent à tous les invités"
+                ],
+                answer: "Qu'ils aient une coupe de Spumante tout le long"
+            },
+            {
+                question: "Que doit-on placer sur chaque table quand les invités s'installent en salle haute ?",
+                options: [
+                    "Seulement de l'eau",
+                    "Eau plate, eau pétillante et Nero d'Avola",
+                    "Tous les vins",
+                    "Seulement le pain"
+                ],
+                answer: "Eau plate, eau pétillante et Nero d'Avola"
+            },
+            {
+                question: "Quand faut-il placer le Grillo blanc sur les tables ?",
+                options: [
+                    "Dès l'arrivée des invités",
+                    "Avec l'eau",
+                    "Une fois que tout le monde est bien installé",
+                    "À la fin du repas"
+                ],
+                answer: "Une fois que tout le monde est bien installé"
+            },
+            {
+                question: "Que faut-il faire avant de placer les bouteilles de Grillo à table ?",
+                options: [
+                    "Les refroidir davantage",
+                    "Enlever les bouchons",
+                    "Les essuyer",
+                    "Vérifier leur température"
+                ],
+                answer: "Enlever les bouchons"
+            },
+            {
+                question: "Combien de personnes restent fixes en salle haute pendant le service à table ?",
+                options: [
+                    "1 personne",
+                    "2 personnes",
+                    "3 personnes",
+                    "Toute l'équipe"
+                ],
+                answer: "2 personnes"
+            },
+            {
+                question: "Quel est le rôle de la première personne en salle haute ?",
+                options: [
+                    "Accueillir les retardataires",
+                    "Gestion continue du réassort des boissons et du pain",
+                    "Prendre les commandes",
+                    "Nettoyer les tables"
+                ],
+                answer: "Gestion continue du réassort des boissons et du pain"
+            },
+            {
+                question: "Quel est le rôle de la deuxième personne en salle haute ?",
+                options: [
+                    "Servir les plats",
+                    "Direction des serveurs et gestion des allergies/menus spéciaux",
+                    "Compter les invités",
+                    "Surveiller la cuisine"
+                ],
+                answer: "Direction des serveurs et gestion des allergies/menus spéciaux"
+            },
+            {
+                question: "Où doit se positionner le chef de salle pendant le service ?",
+                options: [
+                    "En salle haute",
+                    "En salle basse pour superviser la cuisine",
+                    "À l'entrée",
+                    "Au bar"
+                ],
+                answer: "En salle basse pour superviser la cuisine"
+            },
+            {
+                question: "Que se passe-t-il quand le chef de cuisine fait son briefing ?",
+                options: [
+                    "On peut continuer à plaisanter",
+                    "Seuls les cuisiniers écoutent",
+                    "Toute l'équipe doit écouter sans distraction",
+                    "On peut faire autre chose en même temps"
+                ],
+                answer: "Toute l'équipe doit écouter sans distraction"
+            },
+            {
+                question: "Quelle est la règle absolue avant de débarrasser une assiette ?",
+                options: [
+                    "Attendre 10 minutes",
+                    "Toute la table doit avoir terminé de manger",
+                    "Demander au chef de cuisine",
+                    "Attendre que les mariés finissent"
+                ],
+                answer: "Toute la table doit avoir terminé de manger"
+            },
+            {
+                question: "Par quelle table faut-il commencer le débarrassage ?",
+                options: [
+                    "La première table",
+                    "La table la plus proche",
+                    "La table des mariés",
+                    "N'importe laquelle"
+                ],
+                answer: "La table des mariés"
+            },
+            {
+                question: "Comment procède-t-on pour le débarrassage ?",
+                options: [
+                    "Chacun prend ce qu'il peut",
+                    "Par groupes de deux : une personne tient le plateau, l'autre place les assiettes",
+                    "Une seule personne s'en charge",
+                    "On attend la fin du service"
+                ],
+                answer: "Par groupes de deux : une personne tient le plateau, l'autre place les assiettes"
+            },
+            {
+                question: "Pour le buffet, combien faut-il de personnes pour le réassort des boissons et du pain ?",
+                options: [
+                    "2 personnes",
+                    "1 personne en continu",
+                    "3 personnes",
+                    "Toute l'équipe"
+                ],
+                answer: "1 personne en continu"
+            },
+            {
+                question: "Dans la gestion des bouteilles lors du débarrassage, que fait-on des vins avec plus de la moitié ?",
+                options: [
+                    "On les jette",
+                    "On les laisse sur table",
+                    "On les met dans une caisse pour descente au bar",
+                    "On les boit"
+                ],
+                answer: "On les met dans une caisse pour descente au bar"
+            },
+            {
+                question: "Que ne faut-il jamais oublier à la fin du débarrassage ?",
+                options: [
+                    "D'éteindre les lumières",
+                    "Le chariot métallique à sortir à la fin de l'événement",
+                    "De nettoyer les toilettes",
+                    "De ranger les chaises"
+                ],
+                answer: "Le chariot métallique à sortir à la fin de l'événement"
+            },
+            {
+                question: "Quand les invités descendent en salle basse, comment se fait le service ?",
+                options: [
+                    "Avec des plateaux comme avant",
+                    "Uniquement au bar",
+                    "Table par table",
+                    "En buffet obligatoirement"
+                ],
+                answer: "Uniquement au bar"
+            },
+            {
+                question: "Où faut-il positionner le mange-debout pour la pièce montée ?",
+                options: [
+                    "Dans un coin",
+                    "Face au DJ",
+                    "Près de la cuisine",
+                    "À l'entrée"
+                ],
+                answer: "Face au DJ"
+            },
+            {
+                question: "Pour la pièce montée, quel matériel doit être disposé sur le mange-debout ?",
+                options: [
+                    "Une assiette et un couteau",
+                    "Un couteau uniquement",
+                    "Une assiette, un couteau, une petite cuillère et des gants",
+                    "Une assiette, un couteau et une petite cuillère"
+                ],
+                answer: "Une assiette, un couteau et une petite cuillère"
+            },
+            {
+                question: "Pendant la distribution de la pièce montée, combien de personnes restent au bar ?",
+                options: [
+                    "Personne",
+                    "1 personne pour assurer le service continu",
+                    "2 personnes",
+                    "Toute l'équipe"
+                ],
+                answer: "1 personne pour assurer le service continu"
+            },
+            {
+                question: "Qui faut-il appeler pour la fermeture de la salle ?",
+                options: [
+                    "Le propriétaire",
+                    "Didier au 0476 34 48 40",
+                    "La mairie",
+                    "Le service de sécurité"
+                ],
+                answer: "Didier au 0476 34 48 40"
+            },
+            {
+                question: "Que faut-il impérativement faire avec les réfrigérateurs avant de partir ?",
+                options: [
+                    "Les nettoyer",
+                    "Les vider et les éteindre",
+                    "Les laisser allumés",
+                    "Les déplacer"
+                ],
+                answer: "Les vider et les éteindre"
+            },
+            {
+                question: "En cas d'erreur d'un serveur, quelle est la procédure ?",
+                options: [
+                    "Le réprimander devant tout le monde",
+                    "Ignorer l'erreur",
+                    "Corriger l'erreur puis expliquer discrètement à part",
+                    "Le renvoyer immédiatement"
+                ],
+                answer: "Corriger l'erreur puis expliquer discrètement à part"
+            },
+            {
+                question: "Concernant la tenue vestimentaire, quelle couleur de chaussettes est obligatoire ?",
+                options: [
+                    "Blanches",
+                    "Noires",
+                    "La couleur importe peu",
+                    "Grises"
+                ],
+                answer: "Noires"
+            },
+            {
+                question: "Quel est l'objectif principal du chef de salle selon la formation ?",
+                options: [
+                    "Montrer sa supériorité",
+                    "Montrer la bonne direction et accompagner l'équipe",
+                    "Faire tout le travail lui-même",
+                    "Critiquer constamment l'équipe"
+                ],
+                answer: "Montrer la bonne direction et accompagner l'équipe"
+            }
+        ];
+
+        // Éléments du DOM
+        const registrationFormDiv = document.getElementById('registrationForm');
+        const userInfoForm = document.getElementById('userInfoForm');
+        const quizContentDiv = document.getElementById('quizContent');
+        const quizForm = document.getElementById('quizForm');
+        const submitQuizButton = document.getElementById('submitQuiz');
+        const resultDiv = document.getElementById('result');
+        const feedbackContainer = document.getElementById('feedbackContainer');
+        const emojiRainContainer = document.getElementById('emojiRainContainer');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const retryQuizButton = document.getElementById('retryQuizButton');
+
+        const passingScorePercentage = 80;
+        let userData = {}; // Pour stocker nom, prénom, email
+
+        // Fonction pour mettre à jour la barre de progression
+        function updateProgressBar() {
+            const answeredQuestions = document.querySelectorAll('#quizForm input[type="radio"]:checked').length;
+            const totalQuestions = questions.length;
+            const percentage = (answeredQuestions / totalQuestions) * 100;
+            progressBar.style.width = `${percentage}%`;
+            progressText.textContent = `Question ${answeredQuestions} sur ${totalQuestions}`;
+        }
+
+        // Fonction pour charger les questions du QCM
+        function loadQuiz() {
+            quizForm.innerHTML = ''; // Nettoyer avant de recharger
+            questions.forEach((q, index) => {
+                const questionBlock = document.createElement('div');
+                questionBlock.classList.add('question-block');
+                questionBlock.innerHTML = `
+                    <h3>${index + 1}. ${q.question}</h3>
+                    <div class="options" id="question-${index}">
+                        ${q.options.map((option, i) => `
+                            <label>
+                                <input type="radio" name="question${index}" value="${option}" data-question-index="${index}" required>
+                                <span>${option}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                quizForm.appendChild(questionBlock);
+
+                // Ajouter un écouteur d'événements pour chaque radio bouton pour mettre à jour la progression
+                const radioButtons = questionBlock.querySelectorAll(`input[name="question${index}"]`);
+                radioButtons.forEach(radio => {
+                    radio.addEventListener('change', () => {
+                        updateProgressBar();
+                        // Retirer la classe 'not-answered' si la question est maintenant répondue
+                        const parentBlock = radio.closest('.question-block');
+                        if (parentBlock.classList.contains('not-answered')) {
+                            parentBlock.classList.remove('not-answered');
+                        }
+                    });
+                });
+            });
+            updateProgressBar(); // Mettre à jour la barre de progression au chargement initial
+            submitQuizButton.style.display = 'block'; // S'assurer que le bouton Valider est visible
+            submitQuizButton.disabled = false; // Activer le bouton
+            resultDiv.innerHTML = ''; // Nettoyer les résultats précédents
+            resultDiv.classList.remove('pass', 'fail');
+            feedbackContainer.innerHTML = ''; // Nettoyer le feedback précédent
+            emojiRainContainer.innerHTML = ''; // Nettoyer les emojis
+            retryQuizButton.style.display = 'none'; // Cacher le bouton "Réessayer"
+        }
+
+        // Fonction pour afficher l'animation d'emojis
+        function showEmojiRain() {
+            const emojis = ['🎉', '✨', '🌟', '🥳', '✅', '👏', '🏆', '💯', '🚀']; // Plus d'emojis
+            emojiRainContainer.innerHTML = ''; // S'assurer que le conteneur est vide avant de générer de nouveaux emojis
+            for (let i = 0; i < 60; i++) {
+                const emoji = document.createElement('span');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.left = `${Math.random() * 100}vw`;
+                emoji.style.animationDuration = `${Math.random() * 3 + 3}s`;
+                emoji.style.animationDelay = `${Math.random() * 2}s`;
+                emojiRainContainer.appendChild(emoji);
+            }
+        }
+
+        // sendResultsByEmail (inchangée, mais le problème de `qcm_color` est résolu par la logique précédente)
+        async function sendResultsByEmail(userEmail, userName, userLastName, score, totalQuestions, percentage, feedbackDetails) {
+            // Déterminer la couleur basée sur le statut
+            const qcmColor = percentage >= passingScorePercentage ? '#28a745' : '#dc3545'; // Vert pour Réussi, Rouge pour Échoué
+
+            const templateParams = {
+                user_name: userName,
+                user_last_name: userLastName,
+                user_email: userEmail,
+                qcm_score: `${score} / ${totalQuestions}`,
+                qcm_percentage: `${percentage.toFixed(2)}%`,
+                qcm_status: percentage >= passingScorePercentage ? 'Réussi' : 'Échoué',
+                feedback_array: feedbackDetails,
+                qcm_color: qcmColor // NOUVELLE VARIABLE AJOUTÉE ICI
+            };
+
+            // Logs de vérification des paramètres EmailJS
+            console.log("------------------------------------------");
+            console.log("Vérification des paramètres EmailJS :");
+            console.log("user_name:", templateParams.user_name);
+            console.log("user_last_name:", templateParams.user_last_name);
+            console.log("user_email:", templateParams.user_email);
+            console.log("qcm_score:", templateParams.qcm_score);
+            console.log("qcm_percentage:", templateParams.qcm_percentage);
+            console.log("qcm_status:", templateParams.qcm_status);
+            console.log("qcm_color:", templateParams.qcm_color);
+            console.log("feedback_array (nombre d'éléments):", templateParams.feedback_array ? templateParams.feedback_array.length : "null/undefined");
+            console.log("------------------------------------------");
+
+            try {
+                // Envoyer l'e-mail à l'utilisateur
+                await emailjs.send(
+                    "gmail_service",   // Votre ID de service EmailJS
+                    "utilisateur",     // Votre ID de template utilisateur
+                    templateParams
+                );
+                console.log('E-mail utilisateur envoyé avec succès !');
+
+                // Envoyer l'e-mail à l'administrateur
+                await emailjs.send(
+                    "gmail_service",   // Votre ID de service EmailJS
+                    "Admin",           // Votre ID de template administrateur
+                    templateParams
+                );
+                console.log('E-mail administrateur envoyé avec succès !');
+
+                alert("Les résultats ont été envoyés par e-mail.");
+
+            } catch (error) {
+                console.error('Échec de l\'envoi des e-mails :', error);
+                alert("Erreur lors de l'envoi des résultats par e-mail. Veuillez réessayer plus tard.");
+            }
+        }
+
+        // Logique de soumission du QCM
+        function submitQuiz() {
+            let score = 0;
+            const totalQuestions = questions.length;
+            feedbackContainer.innerHTML = '';
+            const feedbackDetails = [];
+
+            let allAnswered = true;
+            questions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+                const questionBlock = document.querySelector(`#question-${index}`).closest('.question-block');
+
+                // Réinitialiser la bordure si elle était en erreur
+                questionBlock.classList.remove('not-answered');
+
+                if (!selectedOption) {
+                    allAnswered = false;
+                    questionBlock.classList.add('not-answered'); // Mettre en évidence la question non répondue
+                }
+            });
+
+            if (!allAnswered) {
+                alert("Veuillez répondre à toutes les questions avant de soumettre.");
+                // Faire défiler vers la première question non répondue
+                document.querySelector('.question-block.not-answered')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return; // Arrêter la fonction si toutes les questions ne sont pas répondues
+            }
+
+            questions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+                const feedbackItem = document.createElement('div');
+                feedbackItem.classList.add('feedback-item');
+
+                let chosenAnswerText = selectedOption ? selectedOption.value : "Non répondu";
+                let isCorrect = false;
+
+                if (selectedOption && selectedOption.value === q.answer) {
+                    score++;
+                    isCorrect = true;
+                    feedbackItem.classList.add('correct');
+                    feedbackItem.innerHTML = `<span class="icon">&#10004;</span><div class="text"><strong>Question ${index + 1}:</strong> ${q.question}<br>Votre réponse : <span class="chosen-answer">${chosenAnswerText}</span></div>`;
+                } else {
+                    feedbackItem.classList.add('incorrect');
+                    feedbackItem.innerHTML = `<span class="icon">&#10006;</span><div class="text"><strong>Question ${index + 1}:</strong> ${q.question}<br>Votre réponse : <span class="chosen-answer">${chosenAnswerText}</span><br>Bonne réponse : <span class="correct-answer">${q.answer}</span></div>`;
+                }
+                feedbackContainer.appendChild(feedbackItem);
+
+                feedbackDetails.push({
+                    question: q.question,
+                    chosenAnswer: chosenAnswerText,
+                    correctAnswer: q.answer,
+                    correct: isCorrect
+                });
+            });
+
+            const percentage = (score / totalQuestions) * 100;
+            resultDiv.innerHTML = `Votre score : ${score} / ${totalQuestions} (${percentage.toFixed(2)}%)`;
+
+            if (percentage >= passingScorePercentage) {
+                resultDiv.classList.remove('fail');
+                resultDiv.classList.add('pass');
+                resultDiv.innerHTML += `<p>Félicitations ${userData.firstName} ! Vous avez réussi le test avec ${percentage.toFixed(2)}%.</p>`;
+                showEmojiRain();
+            } else {
+                resultDiv.classList.remove('pass');
+                resultDiv.classList.add('fail');
+                resultDiv.innerHTML += `<p>Désolé ${userData.firstName}, vous n'avez pas atteint le score requis de ${passingScorePercentage}%. Veuillez réviser et réessayer.</p>`;
+                emojiRainContainer.innerHTML = ''; // S'assurer que les emojis sont bien nettoyés si échec
+            }
+
+            sendResultsByEmail(userData.email, userData.firstName, userData.lastName, score, totalQuestions, percentage, feedbackDetails);
+
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            submitQuizButton.disabled = true;
+            submitQuizButton.style.display = 'none'; // Cacher le bouton "Valider"
+            retryQuizButton.style.display = 'block'; // Afficher le bouton "Réessayer"
+        }
+
+        // Validation du formulaire d'inscription
+        function validateRegistrationForm() {
+            let isValid = true;
+            const firstNameInput = document.getElementById('firstName');
+            const lastNameInput = document.getElementById('lastName');
+            const emailInput = document.getElementById('email');
+
+            // Valider le prénom
+            if (firstNameInput.value.trim() === '') {
+                firstNameInput.closest('.form-group').classList.add('has-error');
+                isValid = false;
+            } else {
+                firstNameInput.closest('.form-group').classList.remove('has-error');
+            }
+
+            // Valider le nom
+            if (lastNameInput.value.trim() === '') {
+                lastNameInput.closest('.form-group').classList.add('has-error');
+                isValid = false;
+            } else {
+                lastNameInput.closest('.form-group').classList.remove('has-error');
+            }
+
+            // Valider l'email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value.trim())) {
+                emailInput.closest('.form-group').classList.add('has-error');
+                isValid = false;
+            } else {
+                emailInput.closest('.form-group').classList.remove('has-error');
+            }
+
+            return isValid;
+        }
+
+
+        // Événements
+        userInfoForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (validateRegistrationForm()) {
+                userData.firstName = document.getElementById('firstName').value.trim();
+                userData.lastName = document.getElementById('lastName').value.trim();
+                userData.email = document.getElementById('email').value.trim();
+
+                registrationFormDiv.style.display = 'none';
+                quizContentDiv.style.display = 'block';
+                loadQuiz();
+            }
+        });
+
+        submitQuizButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            submitQuiz();
+        });
+
+        retryQuizButton.addEventListener('click', () => {
+            // Problème 1 : Correction de la réinitialisation au "Réessayer le QCM"
+            quizContentDiv.style.display = 'none';
+            registrationFormDiv.style.display = 'block';
+            
+            // Réinitialiser les champs du formulaire d'inscription
+            userInfoForm.reset();
+            // Supprimer les classes d'erreur
+            document.querySelectorAll('.form-group').forEach(group => group.classList.remove('has-error'));
+
+            // Nettoyer les emojis
+            emojiRainContainer.innerHTML = ''; 
+
+            // Réinitialiser la barre de progression
+            progressBar.style.width = '0%';
+            progressText.textContent = `Question 0 sur ${questions.length}`; // Remettre le texte initial
+        });
+
+        // Initialisation
+        quizContentDiv.style.display = 'none';
+        updateProgressBar(); // Pour initialiser le texte "Question 0 sur X"
+        // --- JavaScript (finit ici) ---
+    </script>
+</body>
+</html>
